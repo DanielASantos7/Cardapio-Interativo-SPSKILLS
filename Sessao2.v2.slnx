@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CardapioInterativo.API/CardapioInterativo.API.csproj" />
+  <Project Path="CardapioInterativo.MOBILE/CardapioInterativo.MOBILE.csproj" />
+</Solution>
