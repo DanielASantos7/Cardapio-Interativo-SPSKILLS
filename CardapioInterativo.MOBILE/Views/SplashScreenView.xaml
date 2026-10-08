@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CardapioInterativo.MOBILE.Views.SplashScreenView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="SplashScreenView"
+    BackgroundColor="#1E1E1E">
+
+    <Grid
+        Padding="30"
+        RowDefinitions="*, Auto, Auto"
+        RowSpacing="20">
+
+        <VerticalStackLayout
+            Grid.Row="0"
+            Spacing="15"
+            VerticalOptions="Center">
+            <Border
+                x:Name="Topo"
+                HeightRequest="100"
+                StrokeShape="RoundRectangle 15"
+                StrokeThickness="0" />
+            <Border
+                x:Name="Meio"
+                HeightRequest="100"
+                StrokeShape="RoundRectangle 15"
+                StrokeThickness="0" />
+            <Border
+                x:Name="baixo"
+                HeightRequest="100"
+                StrokeShape="RoundRectangle 15"
+                StrokeThickness="0" />
+        </VerticalStackLayout>
+
+        <Label
+            Grid.Row="1"
+            FontAttributes="Italic"
+            FontSize="20"
+            HorizontalOptions="Center"
+            Text="Carregando sistema..."
+            TextColor="White" />
+
+        <ProgressBar
+            x:Name="pgBar"
+            Grid.Row="2"
+            HeightRequest="14"
+            Progress="0"
+            ProgressColor="MediumPurple" />
+    </Grid>
+
+</ContentPage>

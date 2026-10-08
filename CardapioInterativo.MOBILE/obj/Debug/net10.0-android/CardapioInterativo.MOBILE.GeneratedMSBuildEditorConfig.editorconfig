@@ -76,3 +76,33 @@ build_metadata.AdditionalFiles.Inflator = SourceGen
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/ProvasSuzano/Sessao2.v2/CardapioInterativo.MOBILE/Views/LoginView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CardapioInterativo.MOBILE.Views.LoginView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoginView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoginView.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/ProvasSuzano/Sessao2.v2/CardapioInterativo.MOBILE/Views/RestaurantesView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CardapioInterativo.MOBILE.Views.RestaurantesView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RestaurantesView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RestaurantesView.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/ProvasSuzano/Sessao2.v2/CardapioInterativo.MOBILE/Views/SplashScreenView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CardapioInterativo.MOBILE.Views.SplashScreenView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SplashScreenView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SplashScreenView.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
