@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CardapioInterativo.MOBILE.Views;
 
 namespace CardapioInterativo.MOBILE
 {
@@ -7,11 +7,7 @@ namespace CardapioInterativo.MOBILE
         public App()
         {
             InitializeComponent();
-        }
-
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
+            MainPage = new SplashScreenView();
         }
     }
 }

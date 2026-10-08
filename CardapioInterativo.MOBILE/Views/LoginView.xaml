@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CardapioInterativo.MOBILE.Views.LoginView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="LoginView"
+    Shell.NavBarIsVisible="False">
+
+    <ScrollView IsVisible="True">
+
+        <Grid IsVisible="True" RowDefinitions="*, Auto, *">
+
+            <VerticalStackLayout
+                Grid.Row="0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="Bem vindo ao Cardápio Interativo" />
+                <Label
+                    x:Name="lblExibirToken"
+                    FontAttributes="Italic"
+                    FontSize="25"
+                    HorizontalOptions="Center"
+                    Text="Faça seu login"
+                    TextColor="DarkSlateGray" />
+                <Label
+                    x:Name="lblError"
+                    Margin="0,20,0,0"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    IsVisible="False" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="500">
+
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="20">
+                    <VerticalStackLayout x:Name="stackEmail" Spacing="5">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Email"
+                            TextColor="Black" />
+                        <Border
+                            Padding="5"
+                            Stroke="DarkSlateGray"
+                            StrokeShape="RoundRectangle 15"
+                            StrokeThickness="1"
+                            WidthRequest="500">
+                            <Entry
+                                x:Name="email"
+                                FontSize="15"
+                                Placeholder="exemplo@email.com"
+                                PlaceholderColor="DarkGray" />
+                        </Border>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout
+                        x:Name="stackToken"
+                        IsVisible="False"
+                        Spacing="5">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Token"
+                            TextColor="Black" />
+                        <Border
+                            Padding="5"
+                            Stroke="DarkSlateGray"
+                            StrokeShape="RoundRectangle 15"
+                            StrokeThickness="1"
+                            WidthRequest="500">
+                            <Entry
+                                x:Name="lblToken"
+                                FontSize="15"
+                                Keyboard="Numeric"
+                                Placeholder="Insira seu token aqui..."
+                                PlaceholderColor="DarkGray" />
+                        </Border>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout x:Name="stackSenha" Spacing="5">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Senha"
+                            TextColor="Black" />
+                        <Border
+                            Padding="5"
+                            Stroke="DarkSlateGray"
+                            StrokeShape="RoundRectangle 15"
+                            StrokeThickness="1"
+                            WidthRequest="500">
+                            <Entry
+                                x:Name="senha"
+                                FontSize="15"
+                                IsPassword="True"
+                                Placeholder="insira sua senha aqui..."
+                                PlaceholderColor="DarkGray" />
+                        </Border>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <Button
+                x:Name="btnLogin"
+                Grid.Row="2"
+                BackgroundColor="#1E1E1E"
+                Clicked="Button_Clicked"
+                FontSize="20"
+                HeightRequest="65"
+                Text="Entrar"
+                WidthRequest="180" />
+
+            <Button
+                x:Name="btnContinuar"
+                Grid.Row="2"
+                BackgroundColor="#1E1E1E"
+                Clicked="btnContinuar_Clicked"
+                FontSize="20"
+                HeightRequest="65"
+                Text="Continuar"
+                WidthRequest="180" />
+
+        </Grid>
+
+    </ScrollView>
+
+
+
+
+
+</ContentPage>
