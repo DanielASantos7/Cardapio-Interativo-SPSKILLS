@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="CardapioInterativo.MOBILE.Views.RestaurantesView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="RestaurantesView"
+    Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, Auto, *" RowSpacing="20">
+
+        <!--  MENU SUPERIOR  -->
+        <HorizontalStackLayout
+            Grid.Row="0"
+            Margin="0,15,0,0"
+            HorizontalOptions="Center"
+            Spacing="60">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="25"
+                Text="Restaurantes"
+                TextDecorations="Underline" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="25"
+                Text="Pratos" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="25"
+                Text="Ranking" />
+
+        </HorizontalStackLayout>
+
+
+        <!--  PESQUISA  -->
+        <SearchBar
+            Grid.Row="1"
+            FontSize="15"
+            Placeholder="Digite o nome do restaurante..."
+            PlaceholderColor="DarkSlateGray" />
+
+
+        <!--  LISTA DE RESTAURANTES  -->
+        <CollectionView x:Name="cvRestaurantes" Grid.Row="2">
+
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+                    <Border
+                        Margin="10,0,10,10"
+                        Stroke="DarkSlateGray"
+                        StrokeShape="RoundRectangle 15"
+                        StrokeThickness="1">
+                        <VerticalStackLayout Padding="20" Spacing="8">
+
+                            <!--  IMAGEM  -->
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="200"
+                                HorizontalOptions="Fill"
+                                Source="{Binding Imagem}" />
+
+
+                            <!--  NOME + ESTRELAS  -->
+                            <HorizontalStackLayout Spacing="20" VerticalOptions="Center">
+
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Text="{Binding Nome}"
+                                    VerticalOptions="Center" />
+
+
+                                <!--  5 ESTRELAS  -->
+                                <Grid
+                                    ColumnDefinitions="Auto, Auto, Auto, Auto, Auto"
+                                    ColumnSpacing="2"
+                                    VerticalOptions="Center">
+
+                                    <Image
+                                        Grid.Column="0"
+                                        HeightRequest="20"
+                                        Source="{Binding Estrela1}"
+                                        WidthRequest="20" />
+
+                                    <Image
+                                        Grid.Column="1"
+                                        HeightRequest="20"
+                                        Source="{Binding Estrela2}"
+                                        WidthRequest="20" />
+
+                                    <Image
+                                        Grid.Column="2"
+                                        HeightRequest="20"
+                                        Source="{Binding Estrela3}"
+                                        WidthRequest="20" />
+
+                                    <Image
+                                        Grid.Column="3"
+                                        HeightRequest="20"
+                                        Source="{Binding Estrela4}"
+                                        WidthRequest="20" />
+
+                                    <Image
+                                        Grid.Column="4"
+                                        HeightRequest="20"
+                                        Source="{Binding Estrela5}"
+                                        WidthRequest="20" />
+
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+
+                            <!--  DESCRIÇÃO  -->
+                            <Label
+                                FontSize="15"
+                                Text="{Binding Descricao}"
+                                TextColor="DarkSlateGray" />
+
+
+                            <!--  LOCALIZAÇÃO  -->
+                            <Label
+                                FontSize="14"
+                                Text="{Binding Cidade}"
+                                TextColor="Gray" />
+
+                            <Label
+                                FontSize="14"
+                                Text="{Binding Tipo}"
+                                TextColor="Gray" />
+
+
+                            <!--  BOTÃO  -->
+                            <Button
+                                Margin="0,5,0,15"
+                                BackgroundColor="Black"
+                                CornerRadius="10"
+                                Text="Montar Cardápio"
+                                TextColor="White" />
+
+                        </VerticalStackLayout>
+
+                    </Border>
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>
