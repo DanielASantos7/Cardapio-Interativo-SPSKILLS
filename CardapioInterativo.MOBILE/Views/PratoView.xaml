@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CardapioInterativo.MOBILE.Views.PratoView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Novo prato"
+    BackgroundColor="WhiteSmoke"
+    Shell.NavBarIsVisible="False">
+
+    <Grid
+        Padding="24"
+        RowDefinitions="Auto,*"
+        RowSpacing="20">
+
+        <!--  Cabeçalho  -->
+        <Grid
+            Grid.Row="0"
+            ColumnDefinitions="Auto,*"
+            ColumnSpacing="12">
+
+            <Button
+                Padding="0"
+                BackgroundColor="Transparent"
+                Clicked="Voltar_Clicked"
+                FontSize="30"
+                HeightRequest="40"
+                Text="‹"
+                TextColor="#252525"
+                WidthRequest="40" />
+
+            <VerticalStackLayout
+                Grid.Column="1"
+                Spacing="3"
+                VerticalOptions="Center">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    Text="Novo prato"
+                    TextColor="#252525" />
+
+                <Label
+                    FontSize="13"
+                    Text="Preencha os dados do prato"
+                    TextColor="#777777" />
+            </VerticalStackLayout>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="16">
+
+                <!--  Nome  -->
+                <VerticalStackLayout Spacing="6">
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Nome"
+                        TextColor="#333333" />
+
+                    <Entry
+                        x:Name="txtNome"
+                        BackgroundColor="White"
+                        Placeholder="Nome do prato"
+                        PlaceholderColor="#999999"
+                        TextColor="#252525" />
+                </VerticalStackLayout>
+
+                <!--  Descrição  -->
+                <VerticalStackLayout Spacing="6">
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Descrição"
+                        TextColor="#333333" />
+
+                    <Editor
+                        x:Name="txtDescricao"
+                        AutoSize="TextChanges"
+                        BackgroundColor="White"
+                        MinimumHeightRequest="85"
+                        Placeholder="Descreva o prato"
+                        PlaceholderColor="#999999"
+                        TextColor="#252525" />
+                </VerticalStackLayout>
+
+                <!--  Ingredientes  -->
+                <VerticalStackLayout Spacing="6">
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Ingredientes"
+                        TextColor="#333333" />
+
+                    <Editor
+                        x:Name="txtIngredientes"
+                        AutoSize="TextChanges"
+                        BackgroundColor="White"
+                        MinimumHeightRequest="85"
+                        Placeholder="Informe os ingredientes"
+                        PlaceholderColor="#999999"
+                        TextColor="#252525" />
+                </VerticalStackLayout>
+
+                <!--  Tempo de preparo: somente números  -->
+                <VerticalStackLayout Spacing="6">
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Tempo de preparo (minutos)"
+                        TextColor="#333333" />
+
+                    <Entry
+                        x:Name="txtTempoPreparo"
+                        BackgroundColor="White"
+                        Keyboard="Numeric"
+                        Placeholder="Ex.: 30"
+                        PlaceholderColor="#999999"
+                        TextColor="#252525" />
+                </VerticalStackLayout>
+
+                <!--  Categorias carregadas do banco pela API  -->
+                <VerticalStackLayout Spacing="6">
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Categoria"
+                        TextColor="#333333" />
+
+                    <Picker
+                        x:Name="pkCategoria"
+                        Title="Selecione uma categoria"
+                        BackgroundColor="White"
+                        ItemDisplayBinding="{Binding Nome}"
+                        TextColor="#252525" />
+                </VerticalStackLayout>
+
+                <!--  As fotos utilizadas na listagem continuam locais  -->
+                <Label
+                    FontSize="12"
+                    Text="A imagem ilustrativa da listagem será definida automaticamente pelo Mobile."
+                    TextColor="#777777" />
+
+                <!--  Salvar  -->
+                <Button
+                    x:Name="btnSalvar"
+                    BackgroundColor="#252525"
+                    Clicked="Salvar_Clicked"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    HeightRequest="52"
+                    Text="CADASTRAR PRATO"
+                    TextColor="White" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CardapioInterativo.MOBILE.Views.RankingView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Ranking"
+    BackgroundColor="#F5F5F5"
+    Shell.NavBarIsVisible="False">
+
+    <Grid
+        Padding="10,22,10,16"
+        RowDefinitions="Auto,*,Auto"
+        RowSpacing="10">
+
+        <Label
+            Grid.Row="0"
+            FontAttributes="Bold"
+            FontSize="22"
+            Text="RANKING"
+            TextColor="#164B68"
+            VerticalOptions="Center" />
+
+        <!--  Área dos cards  -->
+        <AbsoluteLayout
+            x:Name="layoutRanking"
+            Grid.Row="1"
+            HorizontalOptions="Fill"
+            SizeChanged="LayoutRanking_SizeChanged"
+            VerticalOptions="Fill">
+
+            <!--  CARD 3  -->
+            <Border
+                x:Name="cardTerceiro"
+                Padding="8"
+                AbsoluteLayout.LayoutBounds="0,0,0,0"
+                AbsoluteLayout.LayoutFlags="None"
+                BackgroundColor="#C75D4D"
+                StrokeShape="RoundRectangle 10"
+                StrokeThickness="0"
+                ZIndex="1">
+
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="CardTerceiro_Tapped" />
+                </Border.GestureRecognizers>
+
+                <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="5">
+
+                    <Image
+                        x:Name="imgTerceiro"
+                        Grid.Row="0"
+                        Aspect="AspectFill"
+                        HeightRequest="120"
+                        Source="SemImagem.png" />
+
+                    <VerticalStackLayout Grid.Row="1" Spacing="4">
+
+                        <Label
+                            x:Name="lblNomeTerceiro"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="2"
+                            TextColor="White" />
+
+                        <Label
+                            x:Name="lblDescricaoTerceiro"
+                            FontSize="10"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="2"
+                            TextColor="White" />
+
+                        <Label
+                            x:Name="lblEnderecoTerceiro"
+                            FontSize="10"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="2"
+                            TextColor="White" />
+
+                    </VerticalStackLayout>
+
+                    <Label
+                        x:Name="lblPosicaoTerceiro"
+                        Grid.Row="3"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        HorizontalOptions="End"
+                        Text="#3"
+                        TextColor="White" />
+
+                </Grid>
+            </Border>
+
+            <!--  CARD 2  -->
+            <Border
+                x:Name="cardSegundo"
+                Padding="8"
+                AbsoluteLayout.LayoutBounds="0,0,0,0"
+                AbsoluteLayout.LayoutFlags="None"
+                BackgroundColor="#7A8C69"
+                StrokeShape="RoundRectangle 10"
+                StrokeThickness="0"
+                ZIndex="2">
+
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="CardSegundo_Tapped" />
+                </Border.GestureRecognizers>
+
+                <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="5">
+
+                    <Image
+                        x:Name="imgSegundo"
+                        Grid.Row="0"
+                        Aspect="AspectFill"
+                        HeightRequest="120"
+                        Source="SemImagem.png" />
+
+                    <VerticalStackLayout Grid.Row="1" Spacing="4">
+
+                        <Label
+                            x:Name="lblNomeSegundo"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="2"
+                            TextColor="White" />
+
+                        <Label
+                            x:Name="lblDescricaoSegundo"
+                            FontSize="10"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="2"
+                            TextColor="White" />
+
+                        <Label
+                            x:Name="lblEnderecoSegundo"
+                            FontSize="10"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="2"
+                            TextColor="White" />
+
+                    </VerticalStackLayout>
+
+                    <Label
+                        x:Name="lblPosicaoSegundo"
+                        Grid.Row="3"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        HorizontalOptions="End"
+                        Text="#2"
+                        TextColor="White" />
+
+                </Grid>
+            </Border>
+
+            <!--  CARD PRINCIPAL  -->
+            <Border
+                x:Name="cardPrincipal"
+                Padding="10"
+                AbsoluteLayout.LayoutBounds="0,0,0,0"
+                AbsoluteLayout.LayoutFlags="None"
+                BackgroundColor="#D4A017"
+                StrokeShape="RoundRectangle 10"
+                StrokeThickness="0"
+                ZIndex="3">
+
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="CardPrincipal_Tapped" />
+                </Border.GestureRecognizers>
+
+                <Grid>
+
+                    <!--  FRENTE DO CARD  -->
+                    <Grid
+                        x:Name="faceFrente"
+                        RowDefinitions="Auto,Auto,*,Auto"
+                        RowSpacing="7">
+
+                        <Image
+                            x:Name="imgPrincipal"
+                            Grid.Row="0"
+                            Aspect="AspectFill"
+                            HeightRequest="120"
+                            Source="SemImagem.png" />
+
+                        <VerticalStackLayout Grid.Row="1" Spacing="5">
+
+                            <Label
+                                x:Name="lblNomePrincipal"
+                                FontAttributes="Bold"
+                                FontSize="15"
+                                LineBreakMode="TailTruncation"
+                                MaxLines="2"
+                                TextColor="#222222" />
+
+                            <Label
+                                x:Name="lblDescricaoPrincipal"
+                                FontSize="11"
+                                LineBreakMode="TailTruncation"
+                                MaxLines="3"
+                                TextColor="#333333" />
+
+                            <Label
+                                x:Name="lblEnderecoPrincipal"
+                                FontSize="10"
+                                LineBreakMode="TailTruncation"
+                                MaxLines="2"
+                                TextColor="#333333" />
+
+                        </VerticalStackLayout>
+
+                        <Grid Grid.Row="3" ColumnDefinitions="*,Auto">
+
+                            <Label
+                                x:Name="lblTotalCurtidas"
+                                FontSize="10"
+                                TextColor="#333333"
+                                VerticalOptions="End" />
+
+                            <Label
+                                x:Name="lblPosicaoPrincipal"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                Text="#1"
+                                TextColor="#222222"
+                                VerticalOptions="End" />
+
+                        </Grid>
+                    </Grid>
+
+                    <!--  VERSO DO CARD  -->
+                    <Grid
+                        x:Name="faceVerso"
+                        IsVisible="False"
+                        RowDefinitions="Auto,*,Auto"
+                        RowSpacing="8">
+
+                        <Label
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            HorizontalTextAlignment="Center"
+                            Text="Pratos mais curtidos"
+                            TextColor="#222222" />
+
+                        <CollectionView
+                            x:Name="cvPratosRanking"
+                            Grid.Row="1"
+                            SelectionMode="None">
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid
+                                        Padding="6,8"
+                                        ColumnDefinitions="*,Auto"
+                                        ColumnSpacing="8">
+
+                                        <Label
+                                            FontSize="12"
+                                            LineBreakMode="TailTruncation"
+                                            MaxLines="2"
+                                            Text="{Binding Nome}"
+                                            TextColor="#222222"
+                                            VerticalOptions="Center" />
+
+                                        <Label
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            FontSize="11"
+                                            Text="{Binding Curtidas, StringFormat='{0} curtidas'}"
+                                            TextColor="#222222"
+                                            VerticalOptions="Center" />
+
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+
+                        <Label
+                            Grid.Row="2"
+                            FontSize="10"
+                            HorizontalTextAlignment="Center"
+                            Text="Toque para voltar"
+                            TextColor="#333333" />
+
+                    </Grid>
+                </Grid>
+            </Border>
+
+        </AbsoluteLayout>
+
+        <Button
+            Grid.Row="2"
+            BackgroundColor="#164B68"
+            Clicked="Voltar_Clicked"
+            CornerRadius="6"
+            FontSize="12"
+            HeightRequest="42"
+            Text="VOLTAR"
+            TextColor="White" />
+
+    </Grid>
+</ContentPage>

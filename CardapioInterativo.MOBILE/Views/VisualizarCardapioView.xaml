@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CardapioInterativo.MOBILE.Views.VisualizarCardapioView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Cardápio"
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="False">
+
+    <Grid
+        Padding="16"
+        RowDefinitions="Auto, Auto, Auto, *"
+        RowSpacing="14">
+
+        <!--  Cabeçalho do restaurante e botão de voltar  -->
+        <Grid
+            Grid.Row="0"
+            ColumnDefinitions="Auto, *"
+            ColumnSpacing="12">
+
+            <Button
+                Grid.Column="0"
+                BackgroundColor="#F1F1F1"
+                Clicked="Voltar_Clicked"
+                FontSize="28"
+                HeightRequest="45"
+                Text="‹"
+                TextColor="Black"
+                WidthRequest="45" />
+
+            <VerticalStackLayout
+                Grid.Column="1"
+                Spacing="2"
+                VerticalOptions="Center">
+
+                <Label
+                    x:Name="lblNomeRestaurante"
+                    FontAttributes="Bold"
+                    FontSize="22"
+                    Text="Restaurante"
+                    TextColor="Black" />
+
+                <Label
+                    x:Name="lblTipoRestaurante"
+                    FontSize="14"
+                    Text="Tipo"
+                    TextColor="Gray" />
+
+            </VerticalStackLayout>
+        </Grid>
+
+        <!--  Pesquisa pratos pelo nome  -->
+        <SearchBar
+            x:Name="txtBusca"
+            Grid.Row="1"
+            BackgroundColor="#F5F5F5"
+            Placeholder="Buscar prato pelo nome..."
+            TextChanged="Busca_TextChanged" />
+
+        <!--  Escolha da ordenação  -->
+        <Grid
+            Grid.Row="2"
+            ColumnDefinitions="Auto, *"
+            ColumnSpacing="12">
+
+            <Label
+                Grid.Column="0"
+                Text="Ordenar por:"
+                TextColor="Black"
+                VerticalOptions="Center" />
+
+            <Picker
+                x:Name="pckOrdenacao"
+                Title="Selecionar"
+                Grid.Column="1"
+                SelectedIndexChanged="Ordenacao_SelectedIndexChanged">
+
+                <Picker.Items>
+                    <x:String>Categoria</x:String>
+                    <x:String>Preço crescente</x:String>
+                    <x:String>Preço decrescente</x:String>
+                </Picker.Items>
+            </Picker>
+        </Grid>
+
+        <!--  Lista dos pratos disponíveis para o cliente  -->
+        <CollectionView
+            x:Name="cvPratos"
+            Grid.Row="3"
+            SelectionMode="None">
+
+            <!--  Mensagem quando a busca não encontra pratos  -->
+            <CollectionView.EmptyView>
+                <Label
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="Nenhum prato encontrado."
+                    TextColor="Gray"
+                    VerticalOptions="Center" />
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <!--  Card com foto, nome, categoria, preço e curtida  -->
+                    <Border
+                        Margin="0,0,0,14"
+                        Padding="12"
+                        Stroke="#E5E5E5"
+                        StrokeShape="RoundRectangle 14"
+                        StrokeThickness="1">
+
+                        <Grid
+                            ColumnDefinitions="110, *, Auto"
+                            ColumnSpacing="12"
+                            RowDefinitions="Auto, Auto, Auto"
+                            RowSpacing="5">
+
+                            <!--  Imagem local associada ao ID do prato  -->
+                            <Image
+                                Grid.Row="0"
+                                Grid.RowSpan="3"
+                                Grid.Column="0"
+                                Aspect="AspectFill"
+                                HeightRequest="110"
+                                Source="{Binding Foto}"
+                                WidthRequest="110" />
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                Text="{Binding Nome}"
+                                TextColor="Black" />
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontSize="13"
+                                Text="{Binding Categoria}"
+                                TextColor="Gray" />
+
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="{Binding Preco, StringFormat='R$ {0:F2}'}"
+                                TextColor="#287A4B" />
+
+                            <!--  Alterna entre coração vazio e preenchido  -->
+                            <Button
+                                Grid.Row="0"
+                                Grid.RowSpan="3"
+                                Grid.Column="2"
+                                Padding="4"
+                                BackgroundColor="Transparent"
+                                Clicked="Curtir_Clicked"
+                                CommandParameter="{Binding .}"
+                                FontSize="25"
+                                Text="{Binding IconeCurtida}"
+                                TextColor="#D64545"
+                                VerticalOptions="Start" />
+
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

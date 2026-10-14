@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CardapioInterativo.MOBILE.Views.ListagemPratosView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Pratos"
+    BackgroundColor="WhiteSmoke"
+    Shell.NavBarIsVisible="False">
+
+    <Grid
+        Padding="20"
+        RowDefinitions="Auto,*,Auto"
+        RowSpacing="15">
+
+        <!--  Cabeçalho da tela  -->
+        <Grid
+            Grid.Row="0"
+            ColumnDefinitions="*,Auto"
+            VerticalOptions="Center">
+
+            <VerticalStackLayout Spacing="4">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    Text="Listagem de pratos"
+                    TextColor="#202020" />
+
+                <Label
+                    FontSize="13"
+                    Text="Pratos organizados por categoria"
+                    TextColor="#777777" />
+            </VerticalStackLayout>
+
+        </Grid>
+
+        <!--  Lista de pratos agrupados por categoria  -->
+        <CollectionView
+            x:Name="cvPratos"
+            Grid.Row="1"
+            IsGrouped="True"
+            SelectionMode="None">
+
+            <!--  Nome da categoria  -->
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <Label
+                        Margin="0,15,0,8"
+                        FontAttributes="Bold"
+                        FontSize="17"
+                        Text="{Binding Categoria}"
+                        TextColor="#252525" />
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+
+            <!--  Informações de cada prato  -->
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Margin="0,0,0,10"
+                        Padding="12"
+                        BackgroundColor="White"
+                        Stroke="#E5E5E5"
+                        StrokeShape="RoundRectangle 12"
+                        StrokeThickness="1">
+
+                        <Grid
+                            ColumnDefinitions="100,*,Auto"
+                            ColumnSpacing="12"
+                            RowDefinitions="Auto,Auto"
+                            RowSpacing="5">
+
+                            <!--  Imagem local: prato1.jpg até prato5.jpg  -->
+                            <Image
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="0"
+                                Aspect="AspectFill"
+                                HeightRequest="100"
+                                Source="{Binding Foto}"
+                                WidthRequest="100" />
+
+                            <!--  Nome do prato  -->
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="{Binding Nome}"
+                                TextColor="#202020"
+                                VerticalOptions="End" />
+
+                            <!--  Ingredientes  -->
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontSize="12"
+                                LineBreakMode="TailTruncation"
+                                MaxLines="3"
+                                Text="{Binding Ingredientes}"
+                                TextColor="#777777"
+                                VerticalOptions="Start" />
+
+                            <!--  Quantidade de curtidas  -->
+                            <HorizontalStackLayout
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="2"
+                                HorizontalOptions="End"
+                                Spacing="4"
+                                VerticalOptions="Center">
+
+                                <Label
+                                    FontSize="20"
+                                    Text="♥"
+                                    TextColor="#E53935"
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    FontSize="13"
+                                    Text="{Binding TotalCurtidas}"
+                                    TextColor="#444444"
+                                    VerticalOptions="Center" />
+
+                            </HorizontalStackLayout>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <!--  Botão para cadastrar um prato  -->
+        <Button
+            Grid.Row="2"
+            BackgroundColor="#252525"
+            Clicked="NovoPrato_Clicked"
+            CornerRadius="10"
+            FontAttributes="Bold"
+            FontSize="14"
+            HeightRequest="52"
+            Text="NOVO PRATO"
+            TextColor="White" />
+
+    </Grid>
+</ContentPage>

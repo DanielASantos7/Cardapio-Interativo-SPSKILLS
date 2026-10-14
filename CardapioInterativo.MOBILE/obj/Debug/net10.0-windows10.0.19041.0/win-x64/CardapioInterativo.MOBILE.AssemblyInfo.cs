@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CardapioInterativo.MOBILE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ad1cec14099e2bdf6df25df9ff663bab9c7f8d74")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+748788e5e19f73bee275a971e45e8b2c0cf39bd6")]
 [assembly: System.Reflection.AssemblyProductAttribute("CardapioInterativo.MOBILE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CardapioInterativo.MOBILE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

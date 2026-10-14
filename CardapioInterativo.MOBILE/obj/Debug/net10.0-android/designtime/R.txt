@@ -3083,7 +3083,7 @@ int drawable design_password_eye 0x7f07005c
 int drawable design_snackbar_background 0x7f07005d
 int drawable dotnet_bot 0x7f07005e
 int drawable estrela 0x7f07005f
-int drawable estrela_preta 0x7f070060
+int drawable estrelapreta 0x7f070060
 int drawable ic_arrow_back_black_24 0x7f070061
 int drawable ic_call_answer 0x7f070062
 int drawable ic_call_answer_low 0x7f070063

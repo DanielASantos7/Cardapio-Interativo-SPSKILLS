@@ -79,11 +79,51 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
+[C:/ProvasSuzano/Sessao2.v2/CardapioInterativo.MOBILE/Views/ListagemPratosView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CardapioInterativo.MOBILE.Views.ListagemPratosView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ListagemPratosView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ListagemPratosView.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
 [C:/ProvasSuzano/Sessao2.v2/CardapioInterativo.MOBILE/Views/LoginView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CardapioInterativo.MOBILE.Views.LoginView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\LoginView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\LoginView.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/ProvasSuzano/Sessao2.v2/CardapioInterativo.MOBILE/Views/MontarCardapioView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CardapioInterativo.MOBILE.Views.MontarCardapioView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MontarCardapioView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MontarCardapioView.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/ProvasSuzano/Sessao2.v2/CardapioInterativo.MOBILE/Views/PratoView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CardapioInterativo.MOBILE.Views.PratoView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PratoView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PratoView.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/ProvasSuzano/Sessao2.v2/CardapioInterativo.MOBILE/Views/RankingView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CardapioInterativo.MOBILE.Views.RankingView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RankingView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RankingView.xaml
 build_metadata.AdditionalFiles.Inflator = SourceGen
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 
@@ -104,6 +144,16 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CardapioInterativo.MOBILE.Views.SplashScreenView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SplashScreenView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SplashScreenView.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/ProvasSuzano/Sessao2.v2/CardapioInterativo.MOBILE/Views/VisualizarCardapioView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CardapioInterativo.MOBILE.Views.VisualizarCardapioView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\VisualizarCardapioView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\VisualizarCardapioView.xaml
 build_metadata.AdditionalFiles.Inflator = SourceGen
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 
