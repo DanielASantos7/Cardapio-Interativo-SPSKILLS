@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="CardapioInterativo.MOBILE.Views.RestaurantesView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Name="pagina"
+    Title="RestaurantesView"
+    Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, Auto, *" RowSpacing="20">
+
+        <!--  MENU SUPERIOR  -->
+        <HorizontalStackLayout
+            Grid.Row="0"
+            Margin="0,15,0,0"
+            HorizontalOptions="Center"
+            Spacing="60">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="25"
+                Text="Restaurantes"
+                TextDecorations="Underline" />
+
+            <Label
+                x:Name="lblTabPratos"
+                FontAttributes="Bold"
+                FontSize="25"
+                HorizontalOptions="Center"
+                Text="Pratos"
+                VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TabPratos_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="25"
+                Text="Ranking">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </HorizontalStackLayout>
+
+
+        <!--  PESQUISA  -->
+        <SearchBar
+            x:Name="pesquisa"
+            Grid.Row="1"
+            FontSize="15"
+            Placeholder="Digite o nome do restaurante..."
+            PlaceholderColor="DarkSlateGray"
+            TextChanged="pesquisa_TextChanged" />
+
+
+        <!--  LISTA DE RESTAURANTES  -->
+        <CollectionView x:Name="cvRestaurantes" Grid.Row="2">
+
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+                    <Border
+                        Margin="10,0,10,10"
+                        Stroke="DarkSlateGray"
+                        StrokeShape="RoundRectangle 15"
+                        StrokeThickness="1">
+
+                        <Border.Behaviors>
+                            <toolkit:TouchBehavior
+                                LongPressCommand="{Binding Source={x:Reference pagina}, Path=ExcluirRestauranteCommand}"
+                                LongPressCommandParameter="{Binding .}"
+                                LongPressDuration="700"
+                                ShouldMakeChildrenInputTransparent="False" />
+                        </Border.Behaviors>
+
+                        <VerticalStackLayout Padding="20" Spacing="8">
+
+                            <!--  IMAGEM  -->
+                            <Grid>
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="200"
+                                    Source="{Binding Imagem}" />
+
+                                <Label
+                                    Margin="150,0,0,0"
+                                    FontAttributes="Bold"
+                                    FontSize="160"
+                                    HorizontalOptions="Center"
+                                    IsVisible="{Binding Excluido}"
+                                    Text="X"
+                                    TextColor="White"
+                                    VerticalOptions="Center"
+                                    WidthRequest="250" />
+                            </Grid>
+
+
+
+                            <!--  NOME + ESTRELAS  -->
+                            <HorizontalStackLayout Spacing="20" VerticalOptions="Center">
+
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Text="{Binding Nome}"
+                                    VerticalOptions="Center" />
+
+
+                                <!--  5 ESTRELAS  -->
+                                <Grid
+                                    ColumnDefinitions="Auto, Auto, Auto, Auto, Auto"
+                                    ColumnSpacing="2"
+                                    VerticalOptions="Center">
+
+                                    <Image
+                                        Grid.Column="0"
+                                        HeightRequest="20"
+                                        Source="{Binding Estrela1}"
+                                        WidthRequest="20" />
+
+                                    <Image
+                                        Grid.Column="1"
+                                        HeightRequest="20"
+                                        Source="{Binding Estrela2}"
+                                        WidthRequest="20" />
+
+                                    <Image
+                                        Grid.Column="2"
+                                        HeightRequest="20"
+                                        Source="{Binding Estrela3}"
+                                        WidthRequest="20" />
+
+                                    <Image
+                                        Grid.Column="3"
+                                        HeightRequest="20"
+                                        Source="{Binding Estrela4}"
+                                        WidthRequest="20" />
+
+                                    <Image
+                                        Grid.Column="4"
+                                        HeightRequest="20"
+                                        Source="{Binding Estrela5}"
+                                        WidthRequest="20" />
+
+                                </Grid>
+
+                            </HorizontalStackLayout>
+
+
+                            <!--  DESCRIÇÃO  -->
+                            <Label
+                                FontSize="15"
+                                Text="{Binding Descricao}"
+                                TextColor="DarkSlateGray" />
+
+                            <!--  LOCALIZAÇÃO  -->
+                            <Label
+                                FontSize="14"
+                                Text="{Binding Localizacao}"
+                                TextColor="Gray" />
+
+
+                            <!--  BOTÃO  -->
+                            <Button
+                                Margin="0,5,0,7"
+                                BackgroundColor="Black"
+                                Clicked="Button_Clicked"
+                                CornerRadius="10"
+                                Text="{Binding TextoBotao}"
+                                TextColor="White" />
+
+                        </VerticalStackLayout>
+
+                    </Border>
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>

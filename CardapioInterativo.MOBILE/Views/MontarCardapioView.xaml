@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CardapioInterativo.MOBILE.Views.MontarCardapioView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="MontarCardapioView"
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="False">
+
+    <Grid
+        Padding="16"
+        RowDefinitions="Auto, *, *, Auto"
+        RowSpacing="14">
+
+        <!--  VOLTAR  -->
+        <Button
+            Grid.Row="0"
+            BackgroundColor="#F1F1F1"
+            Clicked="Button_Clicked"
+            CornerRadius="8"
+            HeightRequest="44"
+            HorizontalOptions="Start"
+            Text="VOLTAR"
+            TextColor="Black"
+            WidthRequest="120" />
+
+        <!--  PRATOS DISPONÍVEIS  -->
+        <Grid
+            Grid.Row="1"
+            RowDefinitions="Auto, *"
+            RowSpacing="8">
+
+            <Label
+                Grid.Row="0"
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Pratos disponíveis"
+                TextColor="Black" />
+
+            <Border
+                Grid.Row="1"
+                Padding="4"
+                Stroke="#E0E0E0"
+                StrokeShape="RoundRectangle 12"
+                StrokeThickness="1">
+
+                <CollectionView
+                    x:Name="cvPratosDisponiveis"
+                    HorizontalScrollBarVisibility="Always"
+                    ItemsLayout="HorizontalList"
+                    SelectionMode="None">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="6">
+                                <Grid.GestureRecognizers>
+                                    <DragGestureRecognizer
+                                        BindingContext="{Binding .}"
+                                        CanDrag="True"
+                                        DragStarting="DragGestureRecognizer_DragStarting" />
+                                </Grid.GestureRecognizers>
+
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="155"
+                                    InputTransparent="True"
+                                    Source="{Binding Foto}"
+                                    WidthRequest="155" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+        </Grid>
+
+        <!--  MENU DO RESTAURANTE  -->
+        <Grid
+            Grid.Row="2"
+            RowDefinitions="Auto, *"
+            RowSpacing="8">
+
+            <Label
+                Grid.Row="0"
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Menu do restaurante"
+                TextColor="Black" />
+
+            <!--  Apenas o Border externo aceita o Drop, mantendo o Scroll da CollectionView livre  -->
+            <Border
+                Grid.Row="1"
+                Padding="4"
+                Stroke="#E0E0E0"
+                StrokeShape="RoundRectangle 12"
+                StrokeThickness="1">
+
+                <Border.GestureRecognizers>
+                    <DropGestureRecognizer
+                        AllowDrop="True"
+                        DragOver="DropGestureRecognizer_DragOver"
+                        Drop="DropGestureRecognizer_Drop" />
+                </Border.GestureRecognizers>
+
+                <CollectionView
+                    x:Name="cvMenuRestaurante"
+                    HorizontalScrollBarVisibility="Always"
+                    ItemsLayout="HorizontalList"
+                    SelectionMode="None">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="6">
+                                <Grid.GestureRecognizers>
+                                    <DragGestureRecognizer
+                                        BindingContext="{Binding .}"
+                                        CanDrag="True"
+                                        DragStarting="DragGestureRecognizer_DragStarting_1" />
+                                </Grid.GestureRecognizers>
+
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="155"
+                                    InputTransparent="True"
+                                    Source="{Binding Foto}"
+                                    WidthRequest="155" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+        </Grid>
+
+        <!--  LIXEIRA  -->
+        <Border
+            Grid.Row="3"
+            Padding="16"
+            BackgroundColor="#F7F7F7"
+            HorizontalOptions="Center"
+            Stroke="Transparent"
+            StrokeShape="RoundRectangle 12"
+            WidthRequest="140">
+
+            <Border.GestureRecognizers>
+                <DropGestureRecognizer
+                    AllowDrop="True"
+                    DragOver="DropGestureRecognizer_DragOver"
+                    Drop="Lixeira_Drop" />
+            </Border.GestureRecognizers>
+
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="48"
+                InputTransparent="True"
+                Source="lixeirapreta.png"
+                WidthRequest="48" />
+
+        </Border>
+
+    </Grid>
+</ContentPage>
